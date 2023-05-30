@@ -1,0 +1,150 @@
+@import "fonts.css";
+@import "colors.css";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+p {
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--off-white);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.desktop-version {
+    display: none;
+}
+
+header .logo-area img {
+    height: 36px;
+}
+
+header nav {
+    z-index: 90;
+}
+
+#main-navigation.mobile-version,
+#main-navigation.mobile-version .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#main-navigation.mobile-version .bg {
+    z-index: 91;
+    width: 100%;
+    height: 100%;
+    background-color: var(--very-dark-blue-transp);
+}
+
+#main-navigation.mobile-version #menubar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 160px 30px 20px;
+    background-color: var(--off-white);
+    z-index: 92;
+    width: 70%;
+    height: 100vh;
+    transform: translateX(100%);
+}
+
+#main-navigation.mobile-version #menubar.visible {
+    animation: .3s slideIn forwards;
+}
+
+#main-navigation.mobile-version #menubar.invisible {
+    animation: .3s slideOut forwards;
+}
+
+#main-navigation.mobile-version #menubar ul {
+    list-style: none;
+}
+
+#main-navigation.mobile-version #menubar .menu-item {
+    padding: 16px 0;
+}
+
+#main-navigation.mobile-version #menubar .menu-item a {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-size: 1.16rem;
+}
+
+header .nav-button-area {
+    z-index: 93;
+}
+
+header .nav-button-area button {
+    border: none;
+    background: none;
+}
+
+header nav.desktop-version #app-menu {
+    list-style: none;
+    display: flex;
+}
+
+header nav.desktop-version #app-menu .menu-item a {
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+    transition: color .13s ease-in-out;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+header nav.desktop-version #app-menu .menu-item:hover a,
+header nav.desktop-version #app-menu .menu-item:focus a {
+    color: var(--soft-red);
+}
+
+@media (min-width: 580px) {
+    .desktop-version {
+        display: block;
+    }
+    .mobile-invisible {
+        display: none;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
