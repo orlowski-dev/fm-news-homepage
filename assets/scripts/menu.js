@@ -2,11 +2,14 @@ let isMenuVisible = false;
 const mainNav = $('#main-navigation');
 const mainNavBg = $('#main-navigation .bg');
 const menubar = $('#main-navigation #menubar');
+const navBtn = $('#nav-button');
+const navBtnImage = $('#nav-button img');
+
 
 $(document).ready(function () {
     changeNavClass();
     $(window).resize(changeNavClass);
-    $('#nav-button').on('click', navBtnClick);
+    navBtn.on('click', navBtnClick);
 })
 
 function changeNavClass() {
@@ -30,13 +33,23 @@ function navBtnClick() {
         menubar.addClass('visible');
         menubar.removeClass('invisible');
         isMenuVisible = true;
+        navBtn.attr('aria-expanded', 'true');
+        navBtn.animate({opacity: 0}, 'fast', () => {
+            navBtnImage.attr('src', 'assets/images/icon-menu-close.svg')
+        });
+        navBtn.animate({opacity: 1}, 'fast');
     } else {
         mainNavBg.fadeToggle('fast');
         menubar.addClass('invisible');
         menubar.removeClass('visible');
+        navBtn.animate({opacity: 0}, 'fast', () => {
+            navBtnImage.attr('src', 'assets/images/icon-menu.svg')
+        });
+        navBtn.animate({opacity: 1}, 'fast');
         setTimeout(function () {
             mainNav.css('display', 'none');
             isMenuVisible = false;
+            navBtn.removeAttr('aria-expanded');
         }, 301)
     }
 }
