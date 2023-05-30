@@ -4,6 +4,7 @@ const mainNavBg = $('#main-navigation .bg');
 const menubar = $('#main-navigation #menubar');
 const navBtn = $('#nav-button');
 const navBtnImage = $('#nav-button img');
+const imagesFolder = 'assets/images/';
 
 
 $(document).ready(function () {
@@ -16,9 +17,11 @@ function changeNavClass() {
     if ($(document).width() < 580) {
         mainNav.removeClass('desktop-version');
         mainNav.addClass('mobile-version');
+        $('#highlighted-article-img').attr('src', imagesFolder + 'image-web-3-mobile.jpg');
     } else {
         mainNav.addClass('desktop-version');
         mainNav.removeClass('mobile-version');
+        $('#highlighted-article-img').attr('src', imagesFolder + 'image-web-3-desktop.jpg');
     }
 
     mainNav.removeAttr('style');

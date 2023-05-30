@@ -13,6 +13,11 @@
 button, a {
     -webkit-tap-highlight-color: transparent !important;
     outline: none !important;
+    transition: color .13s ease-in-out, background-color .13s ease-in-out;
+}
+
+a:hover, a:focus {
+    color: var(--soft-red);
 }
 
 p {
@@ -31,11 +36,16 @@ header {
     align-items: center;
     justify-content: space-between;
     max-width: 960px;
-    margin: 20px auto;
+    margin: 20px auto 0;
     padding: 20px;
+    background-color: var(--off-white);
 }
 
 .desktop-version {
+    display: none;
+}
+
+.invisible-elem {
     display: none;
 }
 
@@ -116,10 +126,143 @@ header nav.desktop-version #app-menu .menu-item a {
     transition: color .13s ease-in-out;
     cursor: pointer;
     padding: 6px 12px;
+    display: inline-block;
 }
-header nav.desktop-version #app-menu .menu-item:hover a,
-header nav.desktop-version #app-menu .menu-item:focus a {
+header nav.desktop-version #app-menu .menu-item a:hover,
+header nav.desktop-version #app-menu .menu-item a:focus,
+.new-articles-section article a:hover,
+.new-articles-section article a:focus,
+.three-articles-section article a:hover,
+.three-articles-section article a:focus {
     color: var(--soft-red);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 40px;
+}
+
+.highlighted-article-section article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.highlighted-article-section article img {
+    width: 100%;
+    color: var(--very-dark-blue);
+}
+
+.highlighted-article-section article h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.highlighted-article-section article p {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 20px;
+}
+
+.highlighted-article-section article a {
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--off-white);
+    background-color: var(--soft-red);
+    font-size: .96rem;
+    cursor: pointer;
+    transition: background-color .13s ease-in-out;
+}
+.highlighted-article-section article a:hover,
+.highlighted-article-section article a:focus {
+    background-color: var(--very-dark-blue);
+}
+.new-articles-section {
+    padding: 30px 20px;
+    background-color: var(--very-dark-blue);
+}
+.new-articles-section h2 {
+    color: var(--soft-orange);
+    font-size: 1.8rem;
+}
+
+.new-articles-section article {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+.new-articles-section article:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.new-articles-section article a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: color .13s ease-in-out;
+}
+
+.new-articles-section article p {
+    color: var(--grayish-blue);
+    line-height: 1.8;
+}
+
+.three-articles-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.three-articles-section article {
+    display: grid;
+    grid-template-columns: 30% calc(70% - 20px);
+    gap: 20px;
+}
+.three-articles-section article img {
+    width: 100%;
+}
+
+.three-articles-section article h2 {
+    font-size: 1.8rem;
+    color: var(--grayish-blue);
+    margin-bottom: 6px;
+}
+.three-articles-section article a {
+    color: var(--very-dark-blue);
+    transition: color .13s ease-in-out;
+    text-decoration: none;
+    font-size: .86rem;
+    color: var(--very-dark-blue);
+}
+.three-articles-section article p {
+    margin-top: 6px;
+    line-height: 1.8;
+    color: var(--dark-grayish-blue);
+}
+
+footer {
+    margin: 20px auto 0;
+    max-width: 960px;
+    padding: 20px;
+}
+footer div {
+    background-color: var(--soft-orange);
+    color: var(--off-white);
+    padding: 20px;
+}
+
+footer div a {
+    color: var(--very-dark-blue);
+    line-height: 1.8;
 }
 
 @media (min-width: 580px) {
@@ -128,6 +271,13 @@ header nav.desktop-version #app-menu .menu-item:focus a {
     }
     .mobile-invisible {
         display: none;
+    }
+
+    .highlighted-article-section article {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .highlighted-article-section article img {
+        grid-column: 1 / 3;
     }
 }
 
