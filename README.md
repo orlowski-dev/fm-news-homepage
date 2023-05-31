@@ -26,12 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop design](./assets/preview/desktop-design.jpg)
+![Mobile design](./assets/preview/mobile-design.jpg)
+![Desktop states](./assets/preview/active-states.jpg)
+![Mobile menu](./assets/preview/mobile-menu.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/orlowski-dev/fm-news-homepage)
+- Live Site URL: [GitHub Pages](https://orlowski-dev.github.io/fm-news-homepage/)
 
 ## My process
 
@@ -45,18 +48,22 @@ Users should be able to:
 - jQuery
 
 ### What I learned
-- I learned how to make sliding mobile navigation menu
-- ...
+I learned how to:
+- make sliding mobile navigation menu
+- specifies a grid item's size and location using `grid-column`
 
 ### Continued development
 
 - JavaScript!!
 - jQuery
+- CSS Grid
+- ARIA
 
 ### Useful resources
 
 - [UX for navigation](https://uxdesign.cc/accessibility-of-the-navigation-menu-8a915e4d3e51) - Accessibility of the navigation menu of web application
 - [ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/examples/menu-button-links/) - Navigation Menu Button Example
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column) - grid-column
 
 
 ## Author
